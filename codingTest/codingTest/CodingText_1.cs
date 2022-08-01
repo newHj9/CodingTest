@@ -3,7 +3,7 @@ using System;
 
 class CodingTest_1
 {
-    static void Main(string[] args)
+    public void codingTest1()
     {
         //[1] Hello World
         // Console.WriteLine("Hello World!");
