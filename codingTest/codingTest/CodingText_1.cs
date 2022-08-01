@@ -39,17 +39,17 @@ class CodingTest_1
         
         int a = int.Parse(inputA);
         int[] b = new int[inputB.Length];
-        int i = 0;
+        int i = inputB.Length - 1;
         
         foreach (var c in inputB)
         {
             b[i] = int.Parse(c.ToString());
-            i++;
+            i--;
         }
         
-        Console.WriteLine(a * b[2]);
-        Console.WriteLine(a * b[1]);
         Console.WriteLine(a * b[0]);
-        Console.WriteLine((a * b[2]) + (a * b[1] * 10) + (a * b[0] * 100));
+        Console.WriteLine(a * b[1]);
+        Console.WriteLine(a * b[2]);
+        Console.WriteLine((a * b[0]) + (a * b[1] * 10) + (a * b[2] * 100));
     }
 }
