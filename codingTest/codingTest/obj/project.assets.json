@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hyeonjikim/Documents/GitHub/codingTest/codingTest/codingTest/codingTest.csproj",
+      "projectUniqueName": "/Users/hyeonjikim/codingTest/codingTest/codingTest/codingTest.csproj",
       "projectName": "codingTest",
-      "projectPath": "/Users/hyeonjikim/Documents/GitHub/codingTest/codingTest/codingTest/codingTest.csproj",
+      "projectPath": "/Users/hyeonjikim/codingTest/codingTest/codingTest/codingTest.csproj",
       "packagesPath": "/Users/hyeonjikim/.nuget/packages/",
-      "outputPath": "/Users/hyeonjikim/Documents/GitHub/codingTest/codingTest/codingTest/obj/",
+      "outputPath": "/Users/hyeonjikim/codingTest/codingTest/codingTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hyeonjikim/.nuget/NuGet/NuGet.Config"

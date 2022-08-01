@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T/5mi/VIDvbjTrAAuxM5WalTlWrN/JyCB3NBnpa/rfE0s8V0CVksZ9SbnlggJa5T71o4g19qhn13fuS6DJ+XHw==",
+  "dgSpecHash": "Lc9K5X2iOXTxCp6JrWXpuV1dd11nnZkfN0NElvdGG0lQZe9rrHwx88JJtmvyCYWHXPYgN1lTMr4c4tzDh87C8g==",
   "success": true,
-  "projectFilePath": "/Users/hyeonjikim/Documents/GitHub/codingTest/codingTest/codingTest/codingTest.csproj",
+  "projectFilePath": "/Users/hyeonjikim/codingTest/codingTest/codingTest/codingTest.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
