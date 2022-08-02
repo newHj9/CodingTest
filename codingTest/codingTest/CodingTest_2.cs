@@ -2,106 +2,113 @@ namespace System;
 
 class CodingTest_2
 {
-    public void codingTest2()
+    public void Q9498()
     {
-        //[1] 9498
-        // int input = int.Parse(Console.ReadLine());
-        //
-        // if (input >= 0 && input <= 100)
-        // {
-        //     if (input >= 90 && input <= 100)
-        //     {
-        //         Console.WriteLine("A");
-        //     }
-        //     else if (input >= 80 && input < 90)
-        //     {
-        //         Console.WriteLine("B");
-        //     }
-        //     else if (input >= 70 && input < 80)
-        //     {
-        //         Console.WriteLine("C");
-        //     }
-        //     else if (input >= 60 && input < 70)
-        //     {
-        //         Console.WriteLine("D");
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("F");
-        //     }
-        // }
-        // else
-        // {
-        //     Console.WriteLine("0 ~ 100의 점수를 다시 입력하세요.");
-        //     input = int.Parse(Console.ReadLine());
-        // }
+        int input = int.Parse(Console.ReadLine());
         
-        //[2] 2753
-        // int year = int.Parse(Console.ReadLine());
-        //
-        // if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-        // {
-        //     Console.WriteLine("1");
-        // }
-        // else
-        // {
-        //     Console.WriteLine("0");
-        // }
+        if (input >= 0 && input <= 100)
+        {
+            if (input >= 90 && input <= 100)
+            {
+                Console.WriteLine("A");
+            }
+            else if (input >= 80 && input < 90)
+            {
+                Console.WriteLine("B");
+            }
+            else if (input >= 70 && input < 80)
+            {
+                Console.WriteLine("C");
+            }
+            else if (input >= 60 && input < 70)
+            {
+                Console.WriteLine("D");
+            }
+            else
+            {
+                Console.WriteLine("F");
+            }
+        }
+        else
+        {
+            Console.WriteLine("0 ~ 100의 점수를 다시 입력하세요.");
+            input = int.Parse(Console.ReadLine());
+        }
+    }
 
-        //[3] 2884
-        // string[] time = Console.ReadLine().Split(" ");
-        //
-        // int H = int.Parse(time[0]);
-        // int M = int.Parse(time[1]) - 45;
-        //
-        // if (M >= 0 && M <= 59)
-        // {
-        //     Console.WriteLine("{0} {1}", H, M);
-        // }
-        // else if (M < 0)
-        // {
-        //     --H;
-        //     if (H < 0)
-        //     {
-        //         Console.WriteLine("{0} {1}", 24 + H, 60 + M);
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("{0} {1}", H, 60 + M);
-        //     }
-        // }
+    public void Q2753()
+    {
+        int year = int.Parse(Console.ReadLine());
         
-        //[4] 2525
-        // string[] time = Console.ReadLine().Split(" ");
-        // int cookingTime = int.Parse(Console.ReadLine());
-        // int H = int.Parse(time[0]);
-        // int M = int.Parse(time[1]) + cookingTime;
-        //
-        // if (M > 59)
-        // {
-        //     int i = M / 60;
-        //     for (int j = 0; j < i; j++) { M -= 60; }
-        //     H += i;
-        //     
-        //     if (H > 23)
-        //     {
-        //         Console.WriteLine("{0} {1}", H - 24, M);
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("{0} {1}", H, M);
-        //     }
-        // }
-        // else
-        // {
-        //     Console.WriteLine("{0} {1}", H, M);
-        // }
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
+        {
+            Console.WriteLine("1");
+        }
+        else
+        {
+            Console.WriteLine("0");
+        }
+    }
+
+    public void Q2884()
+    {
+        string[] time = Console.ReadLine().Split(" ");
         
-        //[5] 2480
+        int H = int.Parse(time[0]);
+        int M = int.Parse(time[1]) - 45;
+        
+        if (M >= 0 && M <= 59)
+        {
+            Console.WriteLine("{0} {1}", H, M);
+        }
+        else if (M < 0)
+        {
+            --H;
+            if (H < 0)
+            {
+                Console.WriteLine("{0} {1}", 24 + H, 60 + M);
+            }
+            else
+            {
+                Console.WriteLine("{0} {1}", H, 60 + M);
+            }
+        }
+    }
+
+    public void Q2525()
+    {
+        string[] time = Console.ReadLine().Split(" ");
+        int cookingTime = int.Parse(Console.ReadLine());
+        int H = int.Parse(time[0]);
+        int M = int.Parse(time[1]) + cookingTime;
+        
+        if (M > 59)
+        {
+            int i = M / 60;
+            for (int j = 0; j < i; j++) { M -= 60; }
+            H += i;
+            
+            if (H > 23)
+            {
+                Console.WriteLine("{0} {1}", H - 24, M);
+            }
+            else
+            {
+                Console.WriteLine("{0} {1}", H, M);
+            }
+        }
+        else
+        {
+            Console.WriteLine("{0} {1}", H, M);
+        }
+    }
+    
+    public void Q2480()
+    {
         int[] input = Console.ReadLine().Split(" ").Select(int.Parse).ToArray();
         int num = 0;
         int value = 0;
-
+        
         for (int i = 0; i < input.Length - 1; i++)
         {
             for (int j = i + 1; j < input.Length; j++)
@@ -130,6 +137,10 @@ class CodingTest_2
                 {
                     num++;
                     value = input[i];
+                    if (num == input.Length)
+                    {
+                        num--;
+                    }
                 }
                 else
                 {
@@ -153,10 +164,9 @@ class CodingTest_2
             case 1:
                 Console.WriteLine("{0}", 1000 + value * 100);
                 break;
-            case 3:
+            case 2:
                 Console.WriteLine("{0}", 10000 + value * 1000);
                 break;
         }
-
     }
 }
