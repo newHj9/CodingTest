@@ -59,25 +59,37 @@ public class CodingTest_5
     public void Q1065()
     {
         int input = int.Parse(Console.ReadLine());
-        int count = 0;
-        int sum = 1;
-        
-        for (int i = 1; i < input; i++)
-        {
-            sum = i;
-            if (sum == input)
-            {
-                Console.WriteLine(sum);
-                ++count;
-                sum = 0;
-            }
-            else if(sum > input)
-            {
-                Console.WriteLine(sum);
-                sum = 0;
-            }
-        }
+        int num = 99;
 
-        Console.WriteLine(count);
+        if (input <= num)
+        {
+            Console.WriteLine(input);
+        }
+        else
+        {
+            for (int i = 100; i <= input; i++)
+            {
+                int[] inputs = i.ToString().Select((c) => c - '0').ToArray();
+                int count = 0;
+                for (int j = 1; j < inputs.Length - 1; j++)
+                {
+                    if (inputs[j - 1] - inputs[j] == inputs[j] - inputs[j + 1])
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (count == inputs.Length - 2)
+                {
+                    num++;
+                }
+            }
+        
+            Console.WriteLine(num);
+        }
     }
 }

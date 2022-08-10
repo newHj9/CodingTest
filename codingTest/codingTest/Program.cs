@@ -30,7 +30,7 @@ class Program
         switch (num)
         {
             case 1:
-                CT6.Q11654();
+                CT5.Q1065();
                 break;
             case 2:
                 CT6.Q5622();
