@@ -10,7 +10,7 @@ public class CodingTest_5
 
         for (int i = 1; i < arr.Length; i++)
         {
-            d(i, arr);
+            ++arr[d(i)];
         }
 
         for (int i = 1; i < arr.Length; i++)
@@ -20,39 +20,19 @@ public class CodingTest_5
                 Console.WriteLine(i);
             }
         }
-    }
-    
-    static int d(int n, int[] arr)
-    {
-        if (n > 10000)
-        {
-            return 0;
-        }
-        else
+        
+        int d(int n)
         {
             string num = n.ToString();
             int sum = 0;
-
-            if (num.Length == 1)
+            
+            for (int i = 0; i < num.Length; i++)
             {
-                sum = n;
+                sum += num[i] - '0';
             }
-            else
-            {
-                for (int i = 0; i < num.Length; i++)
-                {
-                    sum += num[i] - '0';
-                }
-            }
-
             n += sum;
 
-            if (n < 10000)
-            {
-                arr[n]++;
-            }
-
-            return n;
+            return (n < 10000) ? n : 0;
         }
     }
 

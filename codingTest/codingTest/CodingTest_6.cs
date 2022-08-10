@@ -7,9 +7,7 @@ public class CodingTest_6
     public void Q11654()
     {
         // 아스키 코드
-        
         string input = Console.ReadLine();
-
         Console.WriteLine(input[0] - '0' + 48); //0이 48이라
     }
 
