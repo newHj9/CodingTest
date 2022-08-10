@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace codingTest;
 
 class Program
@@ -15,30 +17,32 @@ class Program
         // Console.WriteLine(Convert.ToString(0x0F, 2).PadLeft(8, '0'));
         // Console.WriteLine(0xF0);
         // Console.WriteLine(0x0F);
-
+        
         CodingTest_1 CT1 = new CodingTest_1();
         CodingTest_2 CT2 = new CodingTest_2();
         CodingTest_3 CT3 = new CodingTest_3();
         CodingTest_4 CT4 = new CodingTest_4();
+        CodingTest_5 CT5 = new CodingTest_5();
+        CodingTest_6 CT6 = new CodingTest_6();
 
         int num = int.Parse(Console.ReadLine());
 
         switch (num)
         {
             case 1:
-                CT4.Q2577();
+                CT6.Q11654();
                 break;
             case 2:
-                CT4.Q3052();
+                CT6.Q5622();
                 break;
             case 3:
-                CT4.Q1546();
+                CT6.Q2941();
                 break;
             case 4:
-                CT4.Q8958();
+                CT6.Q1157();
                 break;
             case 5:
-                CT4.Q10818();
+                CT6.Q10809();
                 break;
         }
     }
