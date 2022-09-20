@@ -24,25 +24,33 @@ class Program
         CodingTest_4 CT4 = new CodingTest_4();
         CodingTest_5 CT5 = new CodingTest_5();
         CodingTest_6 CT6 = new CodingTest_6();
+        CodingTest_7 CT7 = new CodingTest_7();
+        CodingTest_8 CT8 = new CodingTest_8();
+        CodingTest_9 CT9 = new CodingTest_9();
+        CodingTest_10 CT10 = new CodingTest_10();
+        CodingTest_11 CT11 = new CodingTest_11();
+        CodingTest_12 CT12 = new CodingTest_12();
+        CodingTest_13 CT13 = new CodingTest_13();
+        CodingTest_14_20220920 CT14 = new CodingTest_14_20220920();
 
         int num = int.Parse(Console.ReadLine());
 
         switch (num)
         {
             case 1:
-                CT5.Q4673();
+                CT14.EX1181();
                 break;
             case 2:
-                CT6.Q5622();
+                CT12.Q3053();
                 break;
             case 3:
-                CT6.Q2941();
+                CT12.Q2477();
                 break;
             case 4:
-                CT6.Q1157();
+                CT14.EX12915();
                 break;
             case 5:
-                CT6.Q10809();
+                CT7.Q2839();
                 break;
         }
     }
