@@ -18,8 +18,8 @@ public class Solution {
             }
         }
         
+        sum.Sort();
         answer = sum.ToArray();
-        Array.Sort(answer);
         
         return answer;
     }
