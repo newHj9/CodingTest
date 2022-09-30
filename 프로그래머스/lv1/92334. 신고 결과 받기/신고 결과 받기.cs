@@ -61,7 +61,7 @@ public class Solution {
             id.Add(i, 0);
         }
 
-        foreach (KeyValuePair<string, List<string>> item in dic)
+        foreach (var item in dic)
         {
             foreach (var i in item.Value)
             {
