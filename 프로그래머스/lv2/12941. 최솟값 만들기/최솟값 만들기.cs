@@ -6,6 +6,9 @@ public class Solution {
         int answer = 0;
         
         Array.Sort(A);
+        //Array.Sort(B, (x, y) => y.CompareTo(x));
+        B = B.OrderByDescending(x => x).ToArray();
+        /*
         Array.Sort(B, (a, b) => {
            if(a > b)
                return -1;
@@ -14,7 +17,7 @@ public class Solution {
             else
                 return 0;
         });
-        
+        */
         for(int i = 0; i < A.Length; i++)
         {
             answer += A[i] * B[i];
