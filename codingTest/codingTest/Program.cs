@@ -41,13 +41,14 @@ class Program
         CodingTest_21 CT21 = new CodingTest_21();
         CodingTest_22 CT22 = new CodingTest_22();
         CodingTest_23 CT23 = new CodingTest_23();
+        CodingTest_24 CT24 = new CodingTest_24();
 
         int num = int.Parse(Console.ReadLine());
 
         switch (num)
         {
             case 1:
-                CT23.BJ2204();
+                CT24.BJ1969();
                 break;
             case 2:
                 CT20.BJ25501();
