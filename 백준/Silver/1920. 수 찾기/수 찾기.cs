@@ -12,32 +12,23 @@ int N = int.Parse(Console.ReadLine());
         
         for (int i = 0; i < B.Length; i++)
         {
-            sb.AppendLine(Search(A, B[i]).ToString());
+            sb.AppendLine(Search(A, B[i]));
         }
         
         Console.WriteLine(sb.ToString());
         
-        int Search(int[] A, int numB)
+        string Search(int[] A, int numB)
         {
-            int i = 0;
-            int upper = 0;
-            if (A[A.Length / 2] <= numB)
-            {
-                i = A.Length / 2;
-                upper = A.Length;
-            }
-            else
-            {
-                i = 0;
-                upper = A.Length / 2;
-            }
+            int i = A[A.Length / 2] <= numB ? A.Length / 2 : 0;
+            int upper = A[A.Length / 2] <= numB ? A.Length : A.Length / 2;
+
             for (i = i; i < upper; i++)
             {
                 if (A[i] == numB)
                 {
-                    return 1;
+                    return "1";
                 }
             }
             
-            return 0;
+            return "0";
         }
