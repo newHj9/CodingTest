@@ -2,7 +2,7 @@ int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
 int N = input[0];
 int M = input[1];
 int[] Card = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-List<int> result = new List<int>();
+int Max = 0;
 
 Array.Sort(Card);
 
@@ -14,12 +14,12 @@ for (int i = N - 1; i >= 1; i--)
         {
             int sum = Card[k] + Card[j] + Card[i];
 
-            if (sum <= M && sum > M / 2)
+            if (sum <= M && sum > Max)
             {
-                result.Add(sum);
+                Max = sum;
             }
         }
     }
 }
 
-Console.WriteLine(result.Max());
+Console.WriteLine(Max);
