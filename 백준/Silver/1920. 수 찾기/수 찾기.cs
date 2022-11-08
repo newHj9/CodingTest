@@ -1,43 +1,39 @@
-using System;
 using System.Text;
 
 int N = int.Parse(Console.ReadLine());
-        int[] A = Console.ReadLine().Split().Select(int.Parse).ToArray();
-        int M = int.Parse(Console.ReadLine());
-        int[] B = Console.ReadLine().Split().Select(int.Parse).ToArray();
+int[] A = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+int M = int.Parse(Console.ReadLine());
+int[] B = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+StringBuilder sb = new StringBuilder();
 
-        StringBuilder sb = new StringBuilder();
-        
-        Array.Sort(A);
+Array.Sort(A);
 
-        for (int i = 0; i < M; i++)
+for (int i = 0; i < M; i++)
+{
+    int start = 0, end = N - 1, middle = 0;
+    bool check = false;
+
+    while (start <= end)
+    {
+        middle = (start + end) / 2;
+
+        if (B[i] < A[middle])
         {
-            int num = B[i], start = 0, end = N - 1, mid = 0;
-            bool check = false;
-            while (start <= end)
-            {
-                mid = (start + end) / 2;
-                
-                if (A[mid] < num)
-                {
-                    start = mid + 1;
-                }
-                else if (A[mid] > num)
-                {
-                    end = mid - 1;
-                }
-                else if (A[mid] == num)
-                {
-                    sb.AppendLine("1");
-                    check = true;
-                    break;
-                }
-            }
-
-            if (!check)
-            {
-                sb.AppendLine("0");
-            }
+            end = middle - 1;
         }
+        else if (B[i] > A[middle])
+        {
+            start = middle + 1;
+        }
+        else if (B[i] == A[middle])
+        {
+            sb.AppendLine("1");
+            check = true;
+            break;
+        }
+    }
+    if (!check)
+        sb.AppendLine("0");
+    }
         
-        Console.WriteLine(sb.ToString());
+Console.WriteLine(sb);
