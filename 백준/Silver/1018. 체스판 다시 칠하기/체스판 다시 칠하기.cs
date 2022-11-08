@@ -1,88 +1,34 @@
-using System;
-using System.Collections.Generic;
+int[] input = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+int N = input[0];
+int M = input[1];
+char[][] Chess = new char[N][];
 
-int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-        int N = input[0];
-        int M = input[1];
+for (int i = 0; i < N; i++)
+{
+    Chess[i] = Console.ReadLine().ToCharArray();
+}
 
-        char[][] chess = new char[N][];
-        List<int> check = new List<int>();
-        bool firstWord;
-
-        for (int i = 0; i < N; i++)
+List<int> result = new List<int>();
+// 전체 NM
+for (int i = 0; i <= N - 8; i++)
+{
+    for (int j = 0; j <= M - 8; j++)
+    {
+        int resultW = 0;
+        // 8 x 8
+        for (int k = i; k < i + 8; k++)
         {
-            chess[i] = Console.ReadLine().ToCharArray();
-        }
-
-        for (int i = 0; i <= N - 8; i++)
-        {
-            for (int j = 0; j <= M - 8; j++)
+            for (int l = j; l < j + 8; l++)
             {
-                firstWord = chess[i][j] == 'W' ? true : false;
-                int cnt1 = 0;
-                int cnt2 = 0;
-                for (int k = 0 + i; k < 8 + i; k++)
-                {
-                    for (int l = 0 + j; l < 8 + j; l++)
-                    {
-                        if (k % 2 == 0)
-                        {
-                            if (l % 2 == 0)
-                            {
-                                if (chess[k][l] == 'B')
-                                    cnt1++;
-                            }
-                            else
-                            {
-                                if (chess[k][l] == 'W')
-                                    cnt1++;
-                            }
-                        }
-                        else if(k % 2 != 0)
-                        {
-                            if (l % 2 != 0)
-                            {
-                                if (chess[k][l] == 'B')
-                                    cnt1++;
-                            }
-                            else
-                            {
-                                if (chess[k][l] == 'W')
-                                    cnt1++;
-                            }
-                        }
-                        
-                        if (k % 2 == 0)
-                        {
-                            if (l % 2 == 0)
-                            {
-                                if (chess[k][l] == 'W')
-                                    cnt2++;
-                            }
-                            else
-                            {
-                                if (chess[k][l] == 'B')
-                                    cnt2++;
-                            }
-                        }
-                        else if(k % 2 != 0)
-                        {
-                            if (l % 2 != 0)
-                            {
-                                if (chess[k][l] == 'W')
-                                    cnt2++;
-                            }
-                            else
-                            {
-                                if (chess[k][l] == 'B')
-                                    cnt2++;
-                            }
-                        }
-                    }
-                }
-                check.Add(cnt1);
-                check.Add(cnt2);
+                char color = (k + l) % 2 == 0 ? 'W' : 'B';
+
+                if (color != Chess[k][l])
+                    resultW++;
             }
         }
+        result.Add(resultW);
+        result.Add(64 - resultW);
+    }
+}
 
-        Console.WriteLine(check.Min());
+Console.WriteLine(result.Min());
