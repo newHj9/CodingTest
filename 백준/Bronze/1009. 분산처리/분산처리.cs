@@ -2,34 +2,30 @@ int T = int.Parse(Console.ReadLine());
         
 for (int i = 0; i < T; i++)
 {
-    string[] input = Console.ReadLine().Split().ToArray();
-    string oneNum = input[0];
-    char ch = oneNum[oneNum.Length - 1];
+    int[] input = Console.ReadLine().Split().Select(int.Parse).ToArray();
+    int remainder = input[0] % 10;
 
-    if (ch == '0')
+    if (remainder == 0)
     {
         Console.WriteLine(10);
     }
-    else if (ch == '1' && ch == '5' && ch == '6')
+    else if (remainder == 1 && remainder == 5 && remainder == 6)
     {
-        Console.WriteLine(ch);
+        Console.WriteLine(remainder);
     }
     else
     {
-        int twoNum = int.Parse(input[1]);
-
         List<int> val = new List<int>();
         int num = 1;
-        for (int j = 0; j < twoNum; j++)
+        for (int j = 0; j < input[1]; j++)
         {
-            num *= ch - '0';
-            string str = num.ToString();
-            if (!val.Contains(str[str.Length - 1] - '0'))
-                val.Add(str[str.Length - 1] - '0');
+            num = num * remainder % 10;
+            if (!val.Contains(num))
+                val.Add(num);
             else
                 break;
         }
 
-        Console.WriteLine(val[twoNum % val.Count == 0 ? val.Count - 1 : twoNum % val.Count - 1]);
+        Console.WriteLine(val[input[1] % val.Count == 0 ? val.Count - 1 : input[1] % val.Count - 1]);
     }
 }
