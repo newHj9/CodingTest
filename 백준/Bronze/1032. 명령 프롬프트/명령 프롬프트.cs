@@ -1,6 +1,8 @@
+using System.Text;
+
 int N = int.Parse(Console.ReadLine());
 string[] file = new string[N];
-string result = "";
+StringBuilder sb = new StringBuilder();
 
 for (int i = 0; i < N; i++)
 {
@@ -23,8 +25,8 @@ for (int i = 0; i < checkStr.Length; i++)
     }
 
     if (check)
-        result += "?";
+        sb.Append('?');
     else
-        result += checkCh.ToString();
+        sb.Append(checkCh);
 }
-Console.WriteLine(result);
+Console.WriteLine(sb);
