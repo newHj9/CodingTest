@@ -1,11 +1,11 @@
 int N = int.Parse(Console.ReadLine());
-List<int> sum = new List<int>();
+int sum = 0;
 
 for (int i = 0; i < N; i++)
 {
     int plug = int.Parse(Console.ReadLine());
     if (i != N - 1) plug--;
-    sum.Add(plug);
+    sum += plug;
 }
 
-Console.WriteLine(sum.Sum());
+Console.WriteLine(sum);
